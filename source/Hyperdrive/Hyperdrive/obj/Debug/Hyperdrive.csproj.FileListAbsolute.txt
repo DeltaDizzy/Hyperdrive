@@ -1,0 +1,6 @@
+C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive\bin\Debug\Hyperdrive.dll
+C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive\bin\Debug\Hyperdrive.pdb
+C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive\obj\Debug\Hyperdrive.csproj.CoreCompileInputs.cache
+C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive\obj\Debug\Hyperdrive.dll
+C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive\obj\Debug\Hyperdrive.pdb
+C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive\obj\Debug\Hyperdrive.csprojResolveAssemblyReference.cache
