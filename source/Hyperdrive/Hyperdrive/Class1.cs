@@ -109,7 +109,6 @@ namespace Hyperdrive
     }
     public class ModuleSelectiveHyperdrive : PartModule
     {
-        List<CelestialBody> Bodies = FlightGlobals.Bodies;
         /*Template for a Hyperdrive KSPEvent:
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "NAME_HERE", unfocusedRange = 90)]
         public virtual void NAME_HERE()
@@ -120,96 +119,112 @@ namespace Hyperdrive
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Back to Kerbin", unfocusedRange = 90)]
         public virtual void BackHomeDrive()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[1], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Mun", unfocusedRange = 90)]
         public virtual void Mun()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[2], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Minmus", unfocusedRange = 90)]
         public virtual void Minmus()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[3], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Moho", unfocusedRange = 90)]
         public virtual void Moho()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[4], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Eve", unfocusedRange = 90)]
         public virtual void Eve()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[5], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Duna", unfocusedRange = 90)]
         public virtual void Duna()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[6], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Ike", unfocusedRange = 90)]
         public virtual void ILikeIke()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[7], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Jool", unfocusedRange = 90)]
         public virtual void JoolIsCool()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[8], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Laythe", unfocusedRange = 90)]
         public virtual void Laythe()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[9], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Vall", unfocusedRange = 90)]
         public virtual void Vall()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[10], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Bop", unfocusedRange = 90)]
         public virtual void BoppingBop()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[11], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Tylo", unfocusedRange = 90)]
         public virtual void Tylo()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[12], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Gilly", unfocusedRange = 90)]
         public virtual void ThatOneSpeck()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[13], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Pol", unfocusedRange = 90)]
         public virtual void Pol()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[14], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Dres", unfocusedRange = 90)]
         public virtual void NobodyLikesDres()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[15], 23000);
         }
 
         [KSPEvent(externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Jump to Eeloo", unfocusedRange = 90)]
         public virtual void Eeloo()
         {
+            List<CelestialBody> Bodies = FlightGlobals.Bodies;
             WarpDriver.MedTechWarp(Bodies[16], 23000);
         }
     }
