@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Hyperdrive
+namespace Hyperdrive.API
 {
     public class ModuleAPIJumpDrive : PartModule
     {
