@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="GeneralBadStuff.cs" />
     <Compile Include="JoolWarp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WormholeManager.cs" />

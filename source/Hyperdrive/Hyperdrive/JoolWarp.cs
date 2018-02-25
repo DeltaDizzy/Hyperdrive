@@ -50,7 +50,7 @@ namespace Hyperdrive
         {
             print("Void MrcarrotHyperdrive.WarpDriver.MedTechWarp is Triggered. Beginning jump drive action.");
 
-            var orbit = Orbit.CreateRandomOrbitAround(TargetBody, TargetBody.Radius + (3 * TargetBody.Radius), TargetBody.Radius + (2.5 * TargetBody.Radius));
+            var orbit = Orbit.CreateRandomOrbitAround(TargetBody, TargetBody.Radius + (TargetBody.sphereOfInfluence - 120000), TargetBody.Radius + (TargetBody.sphereOfInfluence - 100000));
             var OldUT = Planetarium.GetUniversalTime();
             var NewUT = (OldUT + UTChange);
             Planetarium.SetUniversalTime(NewUT);
