@@ -15,7 +15,11 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
 
         [KSPField]
         public float Unexistor2 = (Unexistor + 101);
-
+        
+        //Module parameters
+        public string name;
+        
+        
         [KSPEvent(active = true, externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Take Me Somewhere", unfocusedRange = 90)]
         public virtual void Hyperdrive()
         {
@@ -69,7 +73,7 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         }
         public override void OnStart(StartState state)
         {
-            print("PartModule ModuleSomewhereElseDrive loaded.");
-            ScreenMessages.PostScreenMessage("PartModule ModuleSomewhereElseDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
+            print("ModuleInfiniteImprobabliltyDrive loaded");
+            ScreenMessages.PostScreenMessage("ModuleInfiniteImprobabilityDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
         }
     }
