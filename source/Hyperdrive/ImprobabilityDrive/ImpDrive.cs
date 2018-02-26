@@ -31,7 +31,8 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
             System.Random rnd = new System.Random();
             int TargetFGI = rnd.Next(1, PlanetCount);
             int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
-            if (ProbabilityGen == 32)
+            
+            if (ProbabilityGen == 32 &&)
             {
                 BadStuff.Unexist();
             }
@@ -75,5 +76,9 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         {
             print("ModuleInfiniteImprobabliltyDrive loaded");
             ScreenMessages.PostScreenMessage("ModuleInfiniteImprobabilityDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
+            
+            UrlDir.UrlConfig[] ImpDriveNodes;
+            ImpDriveNodes = GameDatabase.Instance.GetConfigs("IMPDRIVE_CONFIG"); //Grab all IMPDRIVE nodes
+            
         }
     }
