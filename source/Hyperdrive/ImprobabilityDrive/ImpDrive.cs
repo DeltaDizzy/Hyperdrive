@@ -16,9 +16,17 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         [KSPField]
         public float Unexistor2 = (Unexistor + 101);
         
-        //Module parameters
-        public string name;
         
+        
+        public override void OnStart(StartState state)
+        {
+            print("ModuleInfiniteImprobabliltyDrive loaded");
+            ScreenMessages.PostScreenMessage("ModuleInfiniteImprobabilityDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
+            
+            UrlDir.UrlConfig[] ImpDriveNodes;
+            ImpDriveNodes = GameDatabase.Instance.GetConfigs("IMPDRIVE_CONFIG"); //Grab all IMPDRIVE nodes
+            
+        }
         
         [KSPEvent(active = true, externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Take Me Somewhere", unfocusedRange = 90)]
         public virtual void Hyperdrive()
@@ -72,13 +80,26 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
             ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[1] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
             WarpDriver.MedTechWarp(Bodies[1], 23000);
         }
-        public override void OnStart(StartState state)
+        
+    }
+    
+    public struct ImpDriveConfig
+    {
+        //Module parameters
+        public string homeWorldName;
+        public bool allowKerbalDeath;
+        public bool allowExistenceFailure;
+        public bool allowBadOrbit;
+        public ImpDriveConfig(string homeWorldName, bool allowCrewDeath, bool allowUnexist, bool, alloBadOrbit)
         {
-            print("ModuleInfiniteImprobabliltyDrive loaded");
-            ScreenMessages.PostScreenMessage("ModuleInfiniteImprobabilityDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
-            
-            UrlDir.UrlConfig[] ImpDriveNodes;
-            ImpDriveNodes = GameDatabase.Instance.GetConfigs("IMPDRIVE_CONFIG"); //Grab all IMPDRIVE nodes
-            
+            homeWorldName
+            body = b; 
+            scale = ConfigNode.ParseVector3(s); 
+            shader = Shader.Find(sh); 
+            rotation = Quaternion.Euler(ConfigNode.ParseVector3(r)); 
+            invertNormals = bool.Parse(inv); 
+            this.tex = GameDatabase.Instance.GetTexture(tex, false); 
+            this.type = type; 
+            this.ignoreLight = bool.Parse(ignoreLight);
         }
     }
