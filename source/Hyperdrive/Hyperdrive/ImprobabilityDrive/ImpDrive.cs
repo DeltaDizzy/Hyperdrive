@@ -1,4 +1,10 @@
-﻿using Hyperdrive;
+﻿/* 
+ * Infinite ImprobabilityDrive for KSP 1.3.1
+ * Copyright Mrcarrot 2018 for PartModule
+ * Copyright DeltaDizzy 2018 for Config Node Parser and Log system improvements
+ */
+
+using Hyperdrive;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,26 +23,32 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
     [KSPField]
     public float Unexistor2 = (Unexistor + 101);
 
+    public static string ImpDriveLogFormatter(string logMsg)
+    {
+        return String.Format("[IMPDRIVE]: " + logMsg);
+    }
 
-
+    //Run on Game Startup
     public override void OnStart(StartState state)
     {
-        print("ModuleInfiniteImprobabliltyDrive loaded");
+        //Print load confirmation to log
+        Debug.Log(ImpDriveLogFormatter("ModuleInfiniteImprobabliltyDrive loaded"));
         ScreenMessages.PostScreenMessage("ModuleInfiniteImprobabilityDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
 
         UrlDir.UrlConfig[] ImpDriveNodes;
         ImpDriveNodes = GameDatabase.Instance.GetConfigs("IMPDRIVE_CONFIG"); //Grab all IMPDRIVE nodes
+        Debug.Log(ImpDriveLogFormatter("ConfigNode Parser loaded"));
 
     }
 
     [KSPEvent(active = true, externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Take Me Somewhere", unfocusedRange = 90)]
-    public virtual void Hyperdrive()
+    public virtual void ImprobabilityDrive()
     {
 
         List<CelestialBody> Bodies = FlightGlobals.Bodies;
         int PlanetCount = Bodies.Count;
         float RandomLimitValue = (PlanetCount + 1);
-        print("[Hyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
+        print(ImpDriveLogFormatter("Bodies loaded. Number of bodies: " + PlanetCount + "."));
         System.Random rnd = new System.Random();
         int TargetFGI = rnd.Next(1, PlanetCount);
         int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
@@ -57,7 +69,7 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         {
             if (Bodies[TargetFGI] != null)
             {
-                print("[ImpDrive]: starting ImpDrive. Jumping to " + Bodies[TargetFGI] + ".");
+                Debug.Log(ImpDriveLogFormatter("Starting ImpDrive. Jumping to " + Bodies[TargetFGI]));
                 ScreenMessages.PostScreenMessage("[ImpDrive] Starting ImpDrive. Jumping to " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
                 WarpDriver.MedTechWarp(Bodies[TargetFGI], timeError);
             }
