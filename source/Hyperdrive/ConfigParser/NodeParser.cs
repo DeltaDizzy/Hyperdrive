@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace HyperDrive
+namespace Hyperdrive
 {
-  public class NodeParser
-  {
-    public bool globalImpDrive;
-  }
+	public class NodeParser
+	{
+		public bool globalImpDrive;
+	}
 }
