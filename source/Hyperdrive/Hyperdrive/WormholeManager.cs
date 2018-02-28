@@ -12,7 +12,7 @@ namespace Hyperdrive
         void Awake()
         {
             DontDestroyOnLoad(this);
-            string GameData = (KSPUtil.ApplicationRootPath + "GameData");
+            string GameData = (KSPUtil.ApplicationRootPath + "/ameData");
         }
     }
 }

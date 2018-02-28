@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Hyperdrive")]
+[assembly: AssemblyTitle("Hyperdrive/ImpDrive")]
 [assembly: AssemblyDescription("A Jump Drive Mod for Kerbal Space Program")]
 [assembly: AssemblyConfiguration("Debug")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Carrot and Terra Space Industries")]
 [assembly: AssemblyProduct("Hyperdrive")]
 [assembly: AssemblyCopyright("Copyright © Mrcarrot 2018")]
 [assembly: AssemblyTrademark("")]

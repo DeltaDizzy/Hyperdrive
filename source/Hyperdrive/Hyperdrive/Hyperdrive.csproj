@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="GeneralBadStuff.cs" />
+    <Compile Include="GeneralStuff.cs" />
     <Compile Include="ImprobabilityDrive\ImpDrive.cs" />
     <Compile Include="JoolWarp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

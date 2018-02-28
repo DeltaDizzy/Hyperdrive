@@ -23,21 +23,18 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
     [KSPField]
     public float Unexistor2 = (Unexistor + 101);
 
-    public static string ImpDriveLogFormatter(string logMsg)
-    {
-        return String.Format("[IMPDRIVE]: " + logMsg);
-    }
+    
 
     //Run on Game Startup
     public override void OnStart(StartState state)
     {
         //Print load confirmation to log
-        Debug.Log(ImpDriveLogFormatter("ModuleInfiniteImprobabliltyDrive loaded"));
+        Debug.Log(GeneralStuff.ImpDriveLogFormatter("ModuleInfiniteImprobabliltyDrive loaded"));
         ScreenMessages.PostScreenMessage("ModuleInfiniteImprobabilityDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
 
         UrlDir.UrlConfig[] ImpDriveNodes;
         ImpDriveNodes = GameDatabase.Instance.GetConfigs("IMPDRIVE_CONFIG"); //Grab all IMPDRIVE nodes
-        Debug.Log(ImpDriveLogFormatter("ConfigNode Parser loaded"));
+        Debug.Log(GeneralStuff.ImpDriveLogFormatter("ConfigNode Parser loaded"));
 
     }
 
@@ -48,7 +45,7 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         List<CelestialBody> Bodies = FlightGlobals.Bodies;
         int PlanetCount = Bodies.Count;
         float RandomLimitValue = (PlanetCount + 1);
-        print(ImpDriveLogFormatter("Bodies loaded. Number of bodies: " + PlanetCount + "."));
+        print(GeneralStuff.ImpDriveLogFormatter("Bodies loaded. Number of bodies: " + PlanetCount + "."));
         System.Random rnd = new System.Random();
         int TargetFGI = rnd.Next(1, PlanetCount);
         int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
@@ -69,14 +66,14 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         {
             if (Bodies[TargetFGI] != null)
             {
-                Debug.Log(ImpDriveLogFormatter("Starting ImpDrive. Jumping to " + Bodies[TargetFGI]));
+                Debug.Log(GeneralStuff.ImpDriveLogFormatter("Starting ImpDrive. Jumping to " + Bodies[TargetFGI]));
                 ScreenMessages.PostScreenMessage("[ImpDrive] Starting ImpDrive. Jumping to " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
                 WarpDriver.MedTechWarp(Bodies[TargetFGI], timeError);
             }
             else
             {
                 Debug.Log("Exception: List " + Bodies + "Contains no instance of an object with type CelestialBody at list place " + TargetFGI + ". Throwing System.NullReferenceException.");
-                ScreenMessages.PostScreenMessage("Sorry, the Improbabilty Drive cannot jump to that location. We're sorry but we can't do that, Dave", 5, ScreenMessageStyle.UPPER_CENTER);
+                ScreenMessages.PostScreenMessage("Sorry, the Improbabilty Drive cannot jump to that location. Normality Assert-I-Tron detected", 5, ScreenMessageStyle.UPPER_CENTER);
                 NullRef();
                 return;
             }
@@ -90,7 +87,7 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
     public virtual void BackHomeDrive()
     {
         List<CelestialBody> Bodies = FlightGlobals.Bodies;
-        ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[1] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
+        ScreenMessages.PostScreenMessage(GeneralStuff.ImpDriveLogFormatter("starting. Jumping to body: " + Bodies[1] + "."), 5, ScreenMessageStyle.UPPER_CENTER);
         WarpDriver.MedTechWarp(Bodies[1], 23000);
     }
 
