@@ -100,6 +100,8 @@ public struct ImpDriveConfig
     public static bool allowKerbalDeath;
     public static bool allowExistenceFailure;
     public static bool allowBadOrbit;
+
+    //Config processing
     public ImpDriveConfig(string homeName, string allowDeath, string allowUnexist, string allowWrongOrbit)
     {
         homeWorldName = homeName;
