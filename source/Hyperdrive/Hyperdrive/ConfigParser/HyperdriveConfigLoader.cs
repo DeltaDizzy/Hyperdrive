@@ -35,7 +35,7 @@ namespace Hyperdrive.ConfigParser
         }
     }
 
-    public class ImpDriveConfig : PartModule
+    public class HyperDriveConfigLoader : MonoBehaviour
     {
         
         
@@ -58,11 +58,13 @@ namespace Hyperdrive.ConfigParser
         [KSPField]
         public static string allowWrongOrbit;
 
-        public override void OnAwake()
+        public void Awake()
         {
+            Debug.Log("[HYPERDRIVE]: Parsing Configs, Please Stand By");
             allowKerbalDeath = bool.Parse(crewCanDie);
             allowExistenceFailure = bool.Parse(allowUnexist);
             allowBadOrbit = bool.Parse(allowWrongOrbit);
+
         }
         
     }
