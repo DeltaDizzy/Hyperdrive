@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConfigParser\HyperdriveConfigLoader.cs" />
     <Compile Include="GeneralBadStuff.cs" />
     <Compile Include="GeneralStuff.cs" />
     <Compile Include="ImprobabilityDrive\ImpDrive.cs" />

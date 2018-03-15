@@ -5,6 +5,7 @@
  */
 
 using Hyperdrive;
+using Hyperdrive.ConfigParser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +51,7 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         int TargetFGI = rnd.Next(1, PlanetCount);
         int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
 
-        if (ProbabilityGen == 32 && ImpDriveConfig.allowExistenceFailure == true)
+        if (ProbabilityGen == 32 && Hyperdrive.ConfigParser.HyperdriveConfigLoader.allowExistenceFailure == true)
         {
             BadStuff.Unexist();
         }
@@ -67,12 +68,12 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
             if (Bodies[TargetFGI] != null)
             {
                 Debug.Log(GeneralStuff.ImpDriveLogFormatter("Starting ImpDrive. Jumping to " + Bodies[TargetFGI]));
-                ScreenMessages.PostScreenMessage("[ImpDrive] Starting ImpDrive. Jumping to " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
+                ScreenMessages.PostScreenMessage("Starting ImpDrive. Jumping to " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
                 WarpDriver.MedTechWarp(Bodies[TargetFGI], timeError);
             }
             else
             {
-                Debug.Log("Exception: List " + Bodies + "Contains no instance of an object with type CelestialBody at list place " + TargetFGI + ". Throwing System.NullReferenceException.");
+                Debug.Log("NullReferenceException: List " + Bodies + "Contains no instance of an object with type CelestialBody at list place " + TargetFGI + ".");
                 ScreenMessages.PostScreenMessage("Sorry, the Improbabilty Drive cannot jump to that location. Normality Assert-I-Tron detected", 5, ScreenMessageStyle.UPPER_CENTER);
                 NullRef();
                 return;
@@ -92,6 +93,7 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
     }
 
 }
+<<<<<<< HEAD
 
 public struct ImpDriveConfig
 {
@@ -111,3 +113,5 @@ public struct ImpDriveConfig
 
     }
 }
+=======
+>>>>>>> 47c858ad4db8a1a163a470063019778dc32f39dd
