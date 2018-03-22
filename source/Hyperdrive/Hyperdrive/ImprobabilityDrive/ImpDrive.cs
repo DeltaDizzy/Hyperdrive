@@ -51,15 +51,19 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         int TargetFGI = rnd.Next(1, PlanetCount);
         int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
 
+<<<<<<< HEAD
         if (ProbabilityGen == 32 && Hyperdrive.ConfigParser.HyperdriveConfigLoader.allowExistenceFailure == true)
+=======
+        if (ProbabilityGen == 32 && Hyperdrive.ConfigParser.HyperDriveConfigLoader.allowExistenceFailure == true)
+>>>>>>> b7ca82db6ad445eee78c4d46d5d84847a1f6f846
         {
             BadStuff.Unexist();
         }
-        if (ProbabilityGen == 73 && ImpDriveConfig.allowKerbalDeath == true)
+        if (ProbabilityGen == 73 && HyperDriveConfigLoader.allowKerbalDeath == true)
         {
             BadStuff.CrewDie();
         }
-        if (ProbabilityGen == 42 && ImpDriveConfig.allowBadOrbit == true)
+        if (ProbabilityGen == 42 && HyperDriveConfigLoader.allowBadOrbit == true)
         {
             BadStuff.BadOrbit(TargetFGI);
         }
