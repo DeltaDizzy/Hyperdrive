@@ -18,6 +18,21 @@ namespace Hyperdrive.ConfigParser
         public static bool allowExistFail = true;
 
         [KSPField]
+=======
+
+<<<<<<< HEAD
+    public class HyperdriveConfigLoader : MonoBehaviour
+    {    
+=======
+    public class HyperDriveConfigLoader : MonoBehaviour
+    {
+        
+        
+>>>>>>> b7ca82db6ad445eee78c4d46d5d84847a1f6f846
+        //Module parameters
+        public static bool allowKerbalDeath = true;   
+        public static bool allowExistenceFailure = true;
+>>>>>>> 8545ff707192dfeea20108596e9a693dc876f936
         public static bool allowBadOrbit = true;
 
         [KSPField]
