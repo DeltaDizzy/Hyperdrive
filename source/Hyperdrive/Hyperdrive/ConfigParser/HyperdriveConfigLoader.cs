@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace Hyperdrive.ConfigParser
 {
+<<<<<<< HEAD
     public class HyperDriveConfigLoader : MonoBehaviour
     {
         //Module parameters
