@@ -7,49 +7,34 @@ using UnityEngine;
 
 namespace Hyperdrive.ConfigParser
 {
-<<<<<<< HEAD
     public class HyperDriveConfigLoader : MonoBehaviour
     {
         //Module parameters
         [KSPField]
-        public static bool allowKerbalDeath = true;
+        public static bool _allowKerbalDeath = true;
 
         [KSPField]
-        public static bool allowExistFail = true;
+        public static bool _allowExistFail = true;
 
         [KSPField]
-=======
 
-<<<<<<< HEAD
-    public class HyperdriveConfigLoader : MonoBehaviour
-    {    
-=======
-    public class HyperDriveConfigLoader : MonoBehaviour
-    {
-        
-        
->>>>>>> b7ca82db6ad445eee78c4d46d5d84847a1f6f846
-        //Module parameters
-        public static bool allowKerbalDeath = true;   
-        public static bool allowExistenceFailure = true;
->>>>>>> 8545ff707192dfeea20108596e9a693dc876f936
-        public static bool allowBadOrbit = true;
+        public static bool _allowBadOrbit = true;
 
         [KSPField]
-        public static string _allowKerbalDeath;
+        public static string allowKerbalDeath;
 
         [KSPField]
-        public static string _allowExistFail;
+        public static string allowExistFail;
 
         [KSPField]
-        public static string _allowBadOrbit;
+        public static string allowBadOrbit;
 
         public void Awake()
         {
             Debug.Log("[HYPERDRIVE]: Parsing Configs, Please Stand By");
-            allowKerbalDeath = bool.Parse(_allowKerbalDeath);
+            allowKerbalDeath = bool.Parse(allowKerbalDeath);
             allowExistFail = bool.Parse(_allowExistFail);
-            allowBadOrbit = bool.Parse(_allowBadOrbit);
+            _allowBadOrbit = bool.Parse(_allowBadOrbit);
             Debug.Log("[HYPERDRIVE]: Configs parsed and loaded, time to squeeze the oranges!");
         }
         

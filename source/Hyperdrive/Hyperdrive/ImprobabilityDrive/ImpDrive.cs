@@ -59,11 +59,11 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         {
             BadStuff.Unexist();
         }
-        if (ProbabilityGen == 73 && HyperDriveConfigLoader.allowKerbalDeath == true)
+        if (ProbabilityGen == 73 && HyperDriveConfigLoader._allowKerbalDeath == true)
         {
             BadStuff.CrewDie();
         }
-        if (ProbabilityGen == 42 && HyperDriveConfigLoader.allowBadOrbit == true)
+        if (ProbabilityGen == 42 && HyperDriveConfigLoader._allowBadOrbit == true)
         {
             BadStuff.BadOrbit(TargetFGI);
         }
