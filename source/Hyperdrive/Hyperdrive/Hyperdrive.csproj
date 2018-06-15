@@ -54,7 +54,7 @@
     <Compile Include="ImprobabilityDrive\ImpDrive.cs"/>
     <Compile Include="JoolWarp.cs" />
 	<Compile Include="ModuleSomewhereElseDrive.cs">
-	<Compile Include="Utils.cs">
+	<Compile Include="Utils.cs"/>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WormholeManager.cs" />
   </ItemGroup>
