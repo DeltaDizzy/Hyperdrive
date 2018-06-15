@@ -6,60 +6,6 @@ using UnityEngine;
 
 namespace Hyperdrive
 {
-    class GeneralStuff : MonoBehaviour
-    {
-        void Awake()
-        {
-            DontDestroyOnLoad(this);
-        }
-    }
-    public class ModuleSomewhereElseDrive : PartModule
-    {
-        //determines an error in time
-        [KSPField]
-        public float timeError = 12000f;
-
-        [KSPEvent(active = true, externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Take Me Somewhere", unfocusedRange = 90)]
-        public virtual void Hyperdrive()
-        {
-
-            List<CelestialBody> Bodies = FlightGlobals.Bodies;
-            int PlanetCount = Bodies.Count;
-            float RandomLimitValue = (PlanetCount + 1);
-            print("[Hyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
-            System.Random rnd = new System.Random();
-            int TargetFGI = rnd.Next(1, PlanetCount);
-            if (Bodies[TargetFGI] != null)
-            {
-                print("[Hyperdrive]: starting. Jumping to body: " + Bodies[TargetFGI] + ".");
-                ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
-                WarpDriver.LowTechWarp(Bodies[TargetFGI], timeError);
-            }
-            else
-            {
-                Debug.Log("Exception: List " + Bodies + "Contains no instance of an object with type CelestialBody at list place " + TargetFGI + ". Throwing System.NullReferenceException.");
-                ScreenMessages.PostScreenMessage("Sorry, the hyperdrive cannot jump to that location. We also cannot open the pod bay doors. Blame the engineers.", 5, ScreenMessageStyle.UPPER_CENTER);
-                NullRef();
-                return;
-            }
-        }
-        private static void NullRef()
-        {
-            throw new NullReferenceException();
-        }
-        [KSPEvent(active = true, externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Back Home", unfocusedRange = 90)]
-        public virtual void BackHomeDrive()
-        {
-            List<CelestialBody> Bodies = FlightGlobals.Bodies;
-            ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[1] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
-            WarpDriver.LowTechWarp(Bodies[1], 23000);
-        }
-        public override void OnStart(StartState state)
-        {
-            print("PartModule ModuleSomewhereElseDrive loaded.");
-            ScreenMessages.PostScreenMessage("PartModule ModuleSomewhereElseDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
-        }
-    }
     public class ModuleInfiniteImprobabilityDrive : PartModule
     {
         //determines an error in time
@@ -79,11 +25,11 @@ namespace Hyperdrive
             List<CelestialBody> Bodies = FlightGlobals.Bodies;
             int PlanetCount = Bodies.Count;
             float RandomLimitValue = (PlanetCount + 1);
-            print("[Hyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
+            print(Utils.HyperdriveLogger("Bodies loaded. Number of bodies: " + PlanetCount + "."));
             System.Random rnd = new System.Random();
             int TargetFGI = rnd.Next(1, PlanetCount);
             int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
-            if (ProbabilityGen == 32)
+            if (ProbabilityGen == 32 && ConfigParser.HyperdriveConfigLoader.allowExistenceFailure == true)
             {
                 BadStuff.Unexist();
             }
@@ -99,13 +45,13 @@ namespace Hyperdrive
             {
                 if (Bodies[TargetFGI] != null)
                 {
-                    print("[Hyperdrive]: starting. Jumping to body: " + Bodies[TargetFGI] + ".");
-                    ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
+                    print(Utils.HyperdriveLogger("starting. Jumping to body: " + Bodies[TargetFGI] + "."));
+                    ScreenMessages.PostScreenMessage("Hyperdrive starting.Jumping to body: " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
                     WarpDriver.MedTechWarp(Bodies[TargetFGI], timeError);
                 }
                 else
                 {
-                    Debug.Log("Exception: List " + Bodies + "Contains no instance of an object with type CelestialBody at list place " + TargetFGI + ". Throwing System.NullReferenceException.");
+                    Debug.Log(Utils.HyperdriveLogger("NullReferenceException: List " + Bodies + "Contains no instance of an object of type CelestialBody at index " + TargetFGI + "."));
                     ScreenMessages.PostScreenMessage("Sorry, the hyperdrive cannot jump to that location. We also cannot open the pod bay doors. Blame the engineers.", 5, ScreenMessageStyle.UPPER_CENTER);
                     NullRef();
                     return;
@@ -120,13 +66,13 @@ namespace Hyperdrive
         public virtual void BackHomeDrive()
         {
             List<CelestialBody> Bodies = FlightGlobals.Bodies;
-            ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[1] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
+            ScreenMessages.PostScreenMessage("Hyperdrive starting.Jumping to body: " + Bodies[1] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
             WarpDriver.MedTechWarp(Bodies[1], 23000);
         }
         public override void OnStart(StartState state)
         {
-            print("PartModule ModuleSomewhereElseDrive loaded.");
-            ScreenMessages.PostScreenMessage("PartModule ModuleSomewhereElseDrive loaded. This partmodule gets a screen message because it's awesome. Deal with it. ", 5, ScreenMessageStyle.UPPER_CENTER);
+            print(Utils.HyperdriveLogger("ModuleSomewhereElseDrive loaded."));
+            ScreenMessages.PostScreenMessage("ModuleSomewhereElseDrive loaded. This partmodule gets a screen message.", 5, ScreenMessageStyle.UPPER_CENTER);
         }
     }
     public class ModuleSomewhereElsePlus : PartModule
@@ -142,14 +88,14 @@ namespace Hyperdrive
             List<CelestialBody> Bodies = FlightGlobals.Bodies;
             int PlanetCount = Bodies.Count;
             int RandomLimiter = (PlanetCount + 1);
-            print("[Hyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
+            print(Utils.HyperdriveLogger("Bodies loaded. Number of bodies: " + PlanetCount + "."));
             System.Random rnd = new System.Random();
             //Linux is the best- TMSP
             int TargetFGI = rnd.Next(1, RandomLimiter);
             if (Bodies[TargetFGI] != null)
             {
-                ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
-                print("[Hyperdrive]: starting. Jumping to body: " + Bodies[TargetFGI] + ".");
+                ScreenMessages.PostScreenMessage("Hyperdrive starting.Jumping to body: " + Bodies[TargetFGI] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
+                print(Utils.HyperdriveLogger("starting. Jumping to body: " + Bodies[TargetFGI] + "."));
                 WarpDriver.MedTechWarp(Bodies[TargetFGI], timeError);
             }
             else
@@ -173,7 +119,7 @@ namespace Hyperdrive
         }
         public override void OnStart(StartState state)
         {
-            print("PartModule ModuleSomewhereElseDrive loaded.");
+            print(Utils.HyperdriveLogger("ModuleSomewhereElseDrive loaded."));
         }
     }
     public class ModuleSelectiveHyperdrive : PartModule

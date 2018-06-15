@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Hyperdrive;
 
 namespace Hyperdrive.API
 {
@@ -22,7 +23,7 @@ namespace Hyperdrive.API
         public virtual void JumpNow()
         {
             int PlanetCount = Bodies.Count;
-            print("[Hyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
+            print(Hyperdrive.Utils.HyperdriveLogger("Bodies loaded. Number of bodies: " + PlanetCount + "."));
             if (Bodies[Target] != null)
             {
                     ScreenMessages.PostScreenMessage(("#LOC_MRC_HDrive_API_GENERIC_DRIVES" + Bodies[Target].bodyDisplayName + "#LOC_MRC_HDrive_API_GENERIC_DRIVESP2"), 5, ScreenMessageStyle.UPPER_CENTER);
