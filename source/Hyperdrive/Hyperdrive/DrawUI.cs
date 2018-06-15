@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using KSP.UI.Screens;
 
@@ -19,6 +15,9 @@ namespace Hyperdrive
         public static Vector2 AnchorMax = new Vector2(0.5f, 1f);
         public List<CelestialBody> bodylist = FlightGlobals.Bodies;
 
+
+
+        /*
         public GUIStyle HyperdriveGUIStyle = new GUIStyle();
         public GUIStyle CreateStyle(GUIStyle style)
         {
@@ -63,7 +62,7 @@ namespace Hyperdrive
             skin.verticalScrollbarUpButton = style;
             skin.verticalScrollbarDownButton = style;
         }
-
+        */
 
         private PopupDialog CreateDialog(List<CelestialBody> bodylist)
         {
@@ -80,6 +79,9 @@ namespace Hyperdrive
 
         }
 
-        ApplicationLauncher.Instance.AddModApplication
+        private void CreateAppLaunchButton()
+        {
+
+        }
     }
 }

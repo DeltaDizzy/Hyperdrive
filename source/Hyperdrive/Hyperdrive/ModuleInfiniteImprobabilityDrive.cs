@@ -51,11 +51,7 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         int TargetFGI = rnd.Next(1, PlanetCount);
         int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
 
-<<<<<<< HEAD
-        if (ProbabilityGen == 32 && Hyperdrive.ConfigParser.HyperdriveConfigLoader.allowExistenceFailure == true)
-=======
         if (ProbabilityGen == 32 && Hyperdrive.ConfigParser.HyperDriveConfigLoader.allowExistenceFailure == true)
->>>>>>> b7ca82db6ad445eee78c4d46d5d84847a1f6f846
         {
             BadStuff.Unexist();
         }
@@ -97,25 +93,3 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
     }
 
 }
-<<<<<<< HEAD
-
-public struct ImpDriveConfig
-{
-    //Module parameters
-    public static string homeWorldName;
-    public static bool allowKerbalDeath;
-    public static bool allowExistenceFailure;
-    public static bool allowBadOrbit;
-
-    //Config processing
-    public ImpDriveConfig(string homeName, string allowDeath, string allowUnexist, string allowWrongOrbit)
-    {
-        homeWorldName = homeName;
-        allowKerbalDeath = bool.Parse(allowDeath);
-        allowExistenceFailure = bool.Parse(allowUnexist);
-        allowBadOrbit = bool.Parse(allowWrongOrbit);
-
-    }
-}
-=======
->>>>>>> 47c858ad4db8a1a163a470063019778dc32f39dd
