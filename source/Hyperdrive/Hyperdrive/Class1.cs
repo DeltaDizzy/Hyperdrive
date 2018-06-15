@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Hyperdrive.ConfigParser;
 using UnityEngine;
 
 namespace Hyperdrive
@@ -29,15 +28,15 @@ namespace Hyperdrive
             System.Random rnd = new System.Random();
             int TargetFGI = rnd.Next(1, PlanetCount);
             int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
-            if (ProbabilityGen == 32 && ConfigParser.HyperdriveConfigLoader.allowExistenceFailure == true)
+            if (ProbabilityGen == 32 && HyperdriveConfigLoader._allowExistFail)
             {
                 BadStuff.Unexist();
             }
-            if (ProbabilityGen == 73)
+            if (ProbabilityGen == 73 && HyperdriveConfigLoader._allowKerbalDeath)
             {
                 BadStuff.CrewDie();
             }
-            if (ProbabilityGen == 42)
+            if (ProbabilityGen == 42 && HyperdriveConfigLoader._allowBadOrbit)
             {
                 BadStuff.BadOrbit(TargetFGI);
             }

@@ -16,7 +16,7 @@ namespace Hyperdrive
         }
         public static void BadOrbit(int FGIAvoid)
         {
-            print("[IMPDRIVE]: Activating Hyperdrive.BadStuff.BadOrbit. Cleverly inventing new destination.");
+            print("[HYPERDRIVE]: Activating Hyperdrive.BadStuff.BadOrbit. Cleverly inventing new destination.");
             ScreenMessages.PostScreenMessage("Unfortunately, your jump drive malfunctioned, and it will now be taking you to anywhere but your destination.", 7, ScreenMessageStyle.UPPER_CENTER);
             List<CelestialBody> Bodies = FlightGlobals.Bodies;
             System.Random rnd = new System.Random();
