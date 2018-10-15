@@ -6,6 +6,11 @@ namespace Hyperdrive
 {
     public class ModuleSomewhereElseDrive : PartModule
     {
+        static List<CelestialBody> Bodies = FlightGlobals.Bodies;
+        static int PlanetCount = Bodies.Count; //Count bodies
+        static System.Random rnd = new System.Random();
+        int TargetFGI = rnd.Next(1, PlanetCount);
+
         //determines an error in time
         [KSPField]
         public float timeError = 12000f;
@@ -16,12 +21,10 @@ namespace Hyperdrive
 
             try
             {
-                List<CelestialBody> Bodies = FlightGlobals.Bodies; //Create list of all bodies
-                int PlanetCount = Bodies.Count; //Count bodies
+                
                 float RandomLimitValue = (PlanetCount + 1);
                 print("[Hyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
-                System.Random rnd = new System.Random();
-                int TargetFGI = rnd.Next(1, PlanetCount);
+
                 if (Bodies[TargetFGI] != null)
                 {
                     print(Utils.HyperdriveLogger("starting. Jumping to body: " + Bodies[TargetFGI] + "."));

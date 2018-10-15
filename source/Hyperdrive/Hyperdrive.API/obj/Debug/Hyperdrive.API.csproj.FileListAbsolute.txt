@@ -6,3 +6,6 @@ C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive.API\bin\Debug\Hyperdri
 C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive.API\bin\Debug\Hyperdrive.pdb
 C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.dll
 C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.pdb
+C:\Users\ejbraswell\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.csprojResolveAssemblyReference.cache
+C:\Users\ejbraswell\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.dll
+C:\Users\ejbraswell\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.pdb
