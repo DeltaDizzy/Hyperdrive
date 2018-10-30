@@ -1,27 +1,37 @@
 ﻿using KSP.Localization;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Hyperdrive
 {
-    class WarpDialog
+    public class WarpDialog : MonoBehaviour
     {
-        private string WarpTitle = "Plancet Selector";
+        private string WarpTitle = "Planet Selector";
         List<CelestialBody> bodylist = FlightGlobals.Bodies;
-
+        CelestialBody target;
         public void CloseDialog(PopupDialog dialog)
         {
             dialog.Dismiss();
         }
 
-        private PopupDialog spawnDialog()
+        private PopupDialog CreateDialog()
         {
             List<DialogGUIBase> dialog = new List<DialogGUIBase>();
             dialog.Add(new DialogGUILabel(Localizer.Format(WarpTitle)));
             dialog.Add(new DialogGUIVerticalLayout());
+            DialogGUIBase[] scrolllist = new DialogGUIBase[bodylist.Count];
+            scrolllist[0] = new DialogGUIContentSizer(ContentSizeFitter.FitMode.Unconstrained, ContentSizeFitter.FitMode.PreferredSize, true);
+            foreach (CelestialBody body in bodylist)
+            {
+                dialog.Add(new DialogGUIButton(body.displayName ?? body.name,
+                    delegate
+                    {
+                        target = body;
+                        StartWarp(WarpMode.Targeted);
+                    }
+                    ));
+            }
         }
     }
 }

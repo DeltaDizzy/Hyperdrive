@@ -241,3 +241,7 @@ Gemfile.lock
 .vs/*
 *.cache
 source/Hyperdrive/.vs/Hyperdrive/v15/.suo
+*.cache
+*.ide
+source/Hyperdrive/.vs/Hyperdrive/v15/.suo
+*.cache
