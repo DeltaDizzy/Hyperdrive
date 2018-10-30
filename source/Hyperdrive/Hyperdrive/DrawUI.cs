@@ -15,7 +15,7 @@ namespace Hyperdrive
             List<CelestialBody> targetlist = new List<CelestialBody>();
             targetlist = FlightGlobals.Bodies;
 
-            targetBody = targetlist.Find(b => );
+            //targetBody = targetlist.Find();
         }
         //Constants
         private const float width = 370.0f;
@@ -30,7 +30,7 @@ namespace Hyperdrive
         
 
         //version
-        private static string version = " vX.X.X";
+        private static string version = " v0.1.0";
 
         //Page enum
         private enum PageType
