@@ -19,7 +19,7 @@ namespace Hyperdrive
 
         public static void LowTechWarp(CelestialBody TargetBody, float TimeFactor)
         {
-            Debug.Log(Utils.HyperdriveLogger("Hyperdrive.WarpDriver.LowTechWarp is Triggered.Beginning jump drive action."));
+            Debug.Log(Utils.Log("Hyperdrive.WarpDriver.LowTechWarp is Triggered.Beginning jump drive action."));
             var orbit = Orbit.CreateRandomOrbitFlyBy(TargetBody, 0.5);//Create rndom orbit parameters
 
             ///These warp drives blow raspberries at reality in a way that has some issues-
@@ -31,11 +31,11 @@ namespace Hyperdrive
             var UTChange = TimeFactor * 1.667;
             var NewUT = (OldUT + UTChange);
             Planetarium.SetUniversalTime(NewUT);
-            print(Utils.HyperdriveLogger("UT updated. New UT: " + NewUT + ". Jumping."));
+            print(Utils.Log("UT updated. New UT: " + NewUT + ". Jumping."));
 
             if (FlightGlobals.ActiveVessel != null) //If you have a vessel
             {
-                print(Utils.HyperdriveLogger("Activating WarpDrive, property FlightGlobals.ActiveVessel has a value."));
+                print(Utils.Log("Activating WarpDrive, property FlightGlobals.ActiveVessel has a value."));
 
                 OrbitPhysicsManager.HoldVesselUnpack(60);
 
@@ -58,7 +58,7 @@ namespace Hyperdrive
             }
             else
             {
-                print(Utils.HyperdriveLogger("Error. Could not initiate Jump Drive. Property FlightGlobals.ActiveVessel is null."));
+                print(Utils.Log("Error. Could not initiate Jump Drive. Property FlightGlobals.ActiveVessel is null."));
                 print("How on Kerbin did you even call this void if there is no active vessel?");
                 return;
             }
@@ -72,11 +72,11 @@ namespace Hyperdrive
             var OldUT = Planetarium.GetUniversalTime();
             var NewUT = (OldUT + UTChange);
             Planetarium.SetUniversalTime(NewUT);
-            print(Utils.HyperdriveLogger("UT updated. Jumping."));
+            print(Utils.Log("UT updated. Jumping."));
 
             if (FlightGlobals.ActiveVessel != null)
             {
-                print(Utils.HyperdriveLogger("Activating WarpDrive, property FlightGlobals.ActiveVessel has a value."));
+                print(Utils.Log("Activating WarpDrive, property FlightGlobals.ActiveVessel has a value."));
                 OrbitPhysicsManager.HoldVesselUnpack(60);
                 FlightGlobals.ActiveVessel.GoOnRails();
                 FlightGlobals.ActiveVessel.orbit.referenceBody = orbit.referenceBody;
@@ -93,7 +93,7 @@ namespace Hyperdrive
             }
             else
             {
-                Debug.LogError(Utils.HyperdriveLogger("Hyperdrive.WarpDriver.MedTechWarp has encountered an 'anomaly'. Jump canceled."));
+                Debug.LogError(Utils.Log("Hyperdrive.WarpDriver.MedTechWarp has encountered an 'anomaly'. Jump canceled."));
                 print("How on Kerbin did you even call this if there is no active vessel?");
                 return;
             }

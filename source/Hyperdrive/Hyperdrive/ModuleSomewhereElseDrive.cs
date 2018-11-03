@@ -27,8 +27,8 @@ namespace Hyperdrive
 
                 if (Bodies[TargetFGI] != null)
                 {
-                    print(Utils.HyperdriveLogger("starting. Jumping to body: " + Bodies[TargetFGI] + "."));
-                    ScreenMessages.PostScreenMessage(Utils.HyperdriveLogger("starting.Jumping to body: " + Bodies[TargetFGI] + "."), 5, ScreenMessageStyle.UPPER_CENTER);
+                    print(Utils.Log("starting. Jumping to body: " + Bodies[TargetFGI] + "."));
+                    ScreenMessages.PostScreenMessage(Utils.Log("starting.Jumping to body: " + Bodies[TargetFGI] + "."), 5, ScreenMessageStyle.UPPER_CENTER);
                     WarpDriver.LowTechWarp(Bodies[TargetFGI], timeError);
                 }
                 else
@@ -58,7 +58,7 @@ namespace Hyperdrive
         }
         public override void OnStart(StartState state)
         {
-            print(Utils.HyperdriveLogger("ModuleSomewhereElseDrive loaded."));
+            print(Utils.Log("ModuleSomewhereElseDrive loaded."));
             ScreenMessages.PostScreenMessage("ModuleSomewhereElseDrive loaded. This Module[TM] gets a screen message. Think about it.", 5, ScreenMessageStyle.UPPER_CENTER);
         }
     }

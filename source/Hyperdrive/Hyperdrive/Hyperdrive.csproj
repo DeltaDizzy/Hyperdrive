@@ -54,13 +54,14 @@
     <Compile Include="DrawUI.cs" />
     <Compile Include="GeneralBadStuff.cs" />
     <Compile Include="HyperdriveConfigLoader.cs" />
+    <Compile Include="HyperdriveDialog.cs" />
     <Compile Include="JoolWarp.cs" />
     <Conpile Include="ModuleInfiniteImprobabilityDrive.cs" />
+    <Compile Include="ModuleLowTechWarp.cs" />
+    <Compile Include="ModuleMedTechWarp.cs" />
     <Compile Include="ModuleSomewhereElseDrive.cs" />
-    <Compile Include="ModuleVeggieWarp.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WarpDialog.cs" />
     <Compile Include="WormholeManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
