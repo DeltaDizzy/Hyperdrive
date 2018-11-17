@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     [KSPAddon(KSPAddon.Startup.Instantly, false)]
-    public class HyperdriveDialog : MonoBehaviour
+    public class BMSHyperdriveDialog : MonoBehaviour
     {
         private string WarpTitle = "Planet Selector";
         List<CelestialBody> bodylist = FlightGlobals.Bodies;
@@ -50,7 +50,7 @@ namespace Hyperdrive
                 BodyButton = new DialogGUIButton(currentbody.displayName ?? currentbody.name, //set button next to visible planet name
                     delegate
                     {
-                        target = currentbody; //Set hyperdrive target to 'currentbody'
+                        target = currentbody; //Set BMSHyperdrive target to 'currentbody'
 
                         // Gets a list of parts on a vessel with the specified PartModule
                         if (mod.part.Modules.Contains<ModuleMedTechWarp>())
@@ -89,7 +89,7 @@ namespace Hyperdrive
                 dialogBase.Add(BodyButton);
                 //TODO: find a way to make the buttons double-click
             }
-            MultiOptionDialog dialog = new MultiOptionDialog("HyperDialog", "Please select a planet", "Hyperdrive Planet Selector", HighLogic.UISkin, dialogBase.ToArray());
+            MultiOptionDialog dialog = new MultiOptionDialog("HyperDialog", "Please select a planet", "BMSHyperdrive Planet Selector", HighLogic.UISkin, dialogBase.ToArray());
 
             return dialog;
         }

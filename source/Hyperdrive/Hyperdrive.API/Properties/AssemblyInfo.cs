@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Hyperdrive.API")]
+[assembly: AssemblyTitle("BMSHyperdrive.API")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Hyperdrive.API")]
+[assembly: AssemblyProduct("BMSHyperdrive.API")]
 [assembly: AssemblyCopyright("Copyright © Mrcarrot 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -34,3 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.0.2.008")]
 [assembly: AssemblyFileVersion("0.0.2.008")]
+
+

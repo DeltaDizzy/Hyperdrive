@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using Hyperdrive;
+using BMSHyperdrive;
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     public class ModuleMedTechWarp : PartModule
     {
@@ -14,7 +14,7 @@ namespace Hyperdrive
 
         public static void MedTechWarp(CelestialBody TargetBody, float UTChange)
         {
-            print(Utils.Log("MrcarrotHyperdrive.WarpDriver.MedTechWarp is Triggered. Beginning jump drive action."));
+            print(Utils.Log("BMSBMSHyperdrive.WarpDriver.MedTechWarp is Triggered. Beginning jump drive action."));
 
             //Ccreate orbital params and change UT
             var orbit = Orbit.CreateRandomOrbitAround(TargetBody, TargetBody.Radius + (TargetBody.sphereOfInfluence - 120000), TargetBody.Radius + (TargetBody.sphereOfInfluence - 100000));
@@ -42,7 +42,7 @@ namespace Hyperdrive
             }
             else
             {
-                Debug.LogError(Utils.Log("Hyperdrive.WarpDriver.MedTechWarp has encountered an 'anomaly'. Jump canceled."));
+                Debug.LogError(Utils.Log("BMSHyperdrive.WarpDriver.MedTechWarp has encountered an 'anomaly'. Jump canceled."));
                 print(Utils.Log(String.Format("How on ", FlightGlobals.GetHomeBodyDisplayName(), "did you even call this if there is no active vessel?")));
                 return;
             }

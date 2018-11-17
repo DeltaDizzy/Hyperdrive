@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Hyperdrive.API.GPP
+namespace BMSHyperdrive.API.GPP
 {
     public class ModuleGPPHDrive : PartModule
     {

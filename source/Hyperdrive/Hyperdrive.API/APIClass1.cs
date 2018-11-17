@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using Hyperdrive;
+using BMSHyperdrive;
 
-namespace Hyperdrive.API
+namespace BMSHyperdrive.API
 {
     public class ModuleAPIJumpDrive : PartModule
     {
@@ -23,11 +23,11 @@ namespace Hyperdrive.API
         public virtual void JumpNow()
         {
             int PlanetCount = Bodies.Count;
-            print(Hyperdrive.Utils.Log("Bodies loaded. Number of bodies: " + PlanetCount + "."));
+            print(BMSHyperdrive.Utils.Log("Bodies loaded. Number of bodies: " + PlanetCount + "."));
             if (Bodies[Target] != null)
             {
                     ScreenMessages.PostScreenMessage(("#LOC_MRC_HDrive_API_GENERIC_DRIVES" + Bodies[Target].bodyDisplayName + "#LOC_MRC_HDrive_API_GENERIC_DRIVESP2"), 5, ScreenMessageStyle.UPPER_CENTER);
-                    print("[Hyperdrive]: starting. Jumping to body: " + Bodies[Target] + ".");
+                    print("[BMSHyperdrive]: starting. Jumping to body: " + Bodies[Target] + ".");
                     WarpDriver.MedTechWarp(Bodies[Target], timeError);
             }
             else

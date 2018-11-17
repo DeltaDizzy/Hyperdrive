@@ -4,8 +4,8 @@
  * Copyright DeltaDizzy 2018 for Config Node Parser and Log system improvements
  */
 
-using Hyperdrive;
-using Hyperdrive.ConfigParser;
+using BMSHyperdrive;
+using BMSHyperdrive.ConfigParser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,15 +51,15 @@ public class ModuleInfiniteImprobabilityDrive : PartModule
         int TargetFGI = rnd.Next(1, PlanetCount);
         int ProbabilityGen = rnd.Next(1, (int)Unexistor2);
 
-        if (ProbabilityGen == 32 && Hyperdrive.ConfigParser.HyperDriveConfigLoader.allowExistenceFailure == true)
+        if (ProbabilityGen == 32 && BMSHyperdrive.ConfigParser.BMSHyperdriveConfigLoader.allowExistenceFailure == true)
         {
             BadStuff.Unexist();
         }
-        if (ProbabilityGen == 73 && HyperDriveConfigLoader._allowKerbalDeath == true)
+        if (ProbabilityGen == 73 && BMSHyperdriveConfigLoader._allowKerbalDeath == true)
         {
             BadStuff.CrewDie();
         }
-        if (ProbabilityGen == 42 && HyperDriveConfigLoader._allowBadOrbit == true)
+        if (ProbabilityGen == 42 && BMSHyperdriveConfigLoader._allowBadOrbit == true)
         {
             BadStuff.BadOrbit(TargetFGI);
         }

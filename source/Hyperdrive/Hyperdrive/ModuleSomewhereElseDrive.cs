@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     public class ModuleSomewhereElseDrive : PartModule
     {
@@ -16,14 +16,14 @@ namespace Hyperdrive
         public float timeError = 12000f;
 
         [KSPEvent(active = true, externalToEVAOnly = true, guiActive = true, guiActiveEditor = false, guiActiveUnfocused = true, guiName = "Take Me Somewhere", unfocusedRange = 90)]
-        public virtual void Hyperdrive()
+        public virtual void BMSHyperdrive()
         {
 
             try
             {
                 
                 float RandomLimitValue = (PlanetCount + 1);
-                print("[Hyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
+                print("[BMSHyperdrive]: Bodies loaded. Number of bodies: " + PlanetCount + ".");
 
                 if (Bodies[TargetFGI] != null)
                 {
@@ -34,7 +34,7 @@ namespace Hyperdrive
                 else
                 {
                     Debug.LogError("Exception: List " + Bodies + "Contains no instance of an object with type CelestialBody at list place " + TargetFGI + ".");
-                    ScreenMessages.PostScreenMessage("Sorry, the hyperdrive cannot jump to that location. We also cannot open the pod bay doors. Blame the engineers.", 5, ScreenMessageStyle.UPPER_CENTER);
+                    ScreenMessages.PostScreenMessage("Sorry, the BMSHyperdrive cannot jump to that location. We also cannot open the pod bay doors. Blame the engineers.", 5, ScreenMessageStyle.UPPER_CENTER);
                     throw new NullReferenceException();
                     return;
                 }
@@ -53,7 +53,7 @@ namespace Hyperdrive
         public virtual void BackHomeDrive()
         {
             List<CelestialBody> Bodies = FlightGlobals.Bodies;
-            ScreenMessages.PostScreenMessage("[Hyperdrive]: starting.Jumping to body: " + Bodies[1] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
+            ScreenMessages.PostScreenMessage("[BMSHyperdrive]: starting.Jumping to body: " + Bodies[1] + ".", 5, ScreenMessageStyle.UPPER_CENTER);
             WarpDriver.LowTechWarp(Bodies[1], 23000);
         }
         public override void OnStart(StartState state)

@@ -5,7 +5,7 @@ using KSP.UI.Screens;
 using KSP.Localization;
 using TMPro;
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public class DrawUI : MonoBehaviour
