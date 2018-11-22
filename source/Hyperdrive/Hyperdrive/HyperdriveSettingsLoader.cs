@@ -93,7 +93,7 @@ namespace BMSHyperdrive
         {
             get
             {
-                return "BMSHyperdrive Global Settings";
+                return "BMS Hyperdrive Global Settings";
             }
         }
         public override int SectionOrder
@@ -129,38 +129,25 @@ namespace BMSHyperdrive
             return hyperNodes;
         }
 
-        public ConfigNode GetSettingsFromFile()
-        {
-            string settingsFile = KSPUtil.ApplicationRootPath.Replace("\\", "/") + "GameData/" + settingsFilename;
-
-            if (!System.IO.File.Exists(settingsFile))
-            {
-                return null;
-            }
-
-            ConfigNode node = ConfigNode.Load(settingsFilename);
-            if (node.HasNode(settingsNode))
-            {
-                node = node.GetNode(settingsNode);
-            }
-            return node;
-        }
         public void Awake()
         {
-            ConfigNode BMSHyperdrive = new ConfigNode("BMSHyperdrive");
-            BMSHyperdrive = BMSHyperdrive.GetNode("BMSHyperdrive");
-
-            if (BMSHyperdrive.HasValue("allowDeath"))
+            foreach (UrlDir.UrlConfig con in GameDatabase.Instance.root.GetConfigs("BMS_HYPERDRIVE"))
             {
-                allowExistFail = bool.Parse(BMSHyperdrive.GetValue("allowDeath"));
-            }
-            if (BMSHyperdrive.HasValue("allowUnexist"))
-            {
-                allowExistFail = bool.Parse(BMSHyperdrive.GetValue("allowUnexist"));
-            }
-            if (BMSHyperdrive.HasValue("allowBadOrbit"))
-            {
-                allowBadOrbit = bool.Parse(BMSHyperdrive.GetValue("allowBadOrbit"));
+                foreach (ConfigNode node in con.config.GetNodes("BMS_HYPERDRIVE"))
+                {
+                    if (node.HasValue("allowDeath"))
+                    {
+                        allowExistFail = bool.Parse(node.GetValue("allowDeath"));
+                    }
+                    if (node.HasValue("allowUnexist"))
+                    {
+                        allowExistFail = bool.Parse(node.GetValue("allowUnexist"));
+                    }
+                    if (node.HasValue("allowBadOrbit"))
+                    {
+                        allowBadOrbit = bool.Parse(node.GetValue("allowBadOrbit"));
+                    }
+                }
             }
         }
         #endregion
