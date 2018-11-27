@@ -1,0 +1,6 @@
+language: csharp
+solution: Hyperdrive.sln
+mono: none
+dotnet: 3.5
+script:
+ - dotnet restore
