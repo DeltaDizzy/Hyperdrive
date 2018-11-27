@@ -1,4 +1,3 @@
 language: csharp
 solution: Hyperdrive.sln
 mono: latest
-dotnet: 3.5
