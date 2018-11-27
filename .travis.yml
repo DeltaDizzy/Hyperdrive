@@ -1,6 +1,4 @@
 language: csharp
 solution: Hyperdrive.sln
-mono: none
+mono: latest
 dotnet: 3.5
-script:
- - dotnet restore
