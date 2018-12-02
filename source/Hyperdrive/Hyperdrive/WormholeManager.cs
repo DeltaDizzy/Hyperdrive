@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     class WormholeManager : MonoBehaviour
     {

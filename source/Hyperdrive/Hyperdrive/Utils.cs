@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     public class Utils
     {
         public static string Log(string logMessage)
         {
-            return String.Format("[HYPERDRIVE]: " + logMessage);
+            return String.Format("[BMSHyperdrive]: " + logMessage);
         }
     }
 

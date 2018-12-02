@@ -55,6 +55,7 @@
     <Compile Include="GeneralBadStuff.cs" />
     <Compile Include="HyperdriveConfigLoader.cs" />
     <Compile Include="HyperdriveDialog.cs" />
+    <Compile Include="HyperdriveSettingsLoader.cs" />
     <Compile Include="JoolWarp.cs" />
     <Conpile Include="ModuleInfiniteImprobabilityDrive.cs" />
     <Compile Include="ModuleLowTechWarp.cs" />

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     public class ModuleLowTechWarp : PartModule
     {
@@ -13,7 +13,7 @@ namespace Hyperdrive
 
         public static void LowTechWarp(CelestialBody TargetBody, float TimeFactor)
         {
-            Debug.Log(Utils.Log("Hyperdrive.WarpDriver.LowTechWarp is Triggered. Beginning jump drive action."));
+            Debug.Log(Utils.Log("BMSHyperdrive.WarpDriver.LowTechWarp is Triggered. Beginning jump drive action."));
             System.Random days = new System.Random();
             int orbdays = days.Next(1,10);
             Orbit orbit = Orbit.CreateRandomOrbitFlyBy(TargetBody, (orbdays / 10)); //Create random orbit parameters

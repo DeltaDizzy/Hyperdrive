@@ -1,5 +1,5 @@
 ﻿/* 
- * Hyperdrive for KSP 1.3.1
+ * BMSHyperdrive for KSP 1.3.1
  * Copyright Mrcarrot 2018 for PartModule and
  * DeltaDizzy 2018 for Log system improvements
  */
@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using Hyperdrive;
+using BMSHyperdrive;
 
-namespace Hyperdrive
+namespace BMSHyperdrive
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public class WarpDriver : MonoBehaviour
@@ -19,7 +19,7 @@ namespace Hyperdrive
 
         public static void LowTechWarp(CelestialBody TargetBody, float TimeFactor)
         {
-            Debug.Log(Utils.Log("Hyperdrive.WarpDriver.LowTechWarp is Triggered.Beginning jump drive action."));
+            Debug.Log(Utils.Log("BMSHyperdrive.WarpDriver.LowTechWarp is Triggered.Beginning jump drive action."));
             var orbit = Orbit.CreateRandomOrbitFlyBy(TargetBody, 0.5);//Create rndom orbit parameters
 
             ///These warp drives blow raspberries at reality in a way that has some issues-
@@ -65,7 +65,7 @@ namespace Hyperdrive
         }
         public static void MedTechWarp(CelestialBody TargetBody, float UTChange)
         {
-            print("MrcarrotHyperdrive.WarpDriver.MedTechWarp is Triggered. Beginning jump drive action.");
+            print("MrcarrotBMSHyperdrive.WarpDriver.MedTechWarp is Triggered. Beginning jump drive action.");
             
             //Ccreate orbital params and change UT
             var orbit = Orbit.CreateRandomOrbitAround(TargetBody, TargetBody.Radius + (TargetBody.sphereOfInfluence - 120000), TargetBody.Radius + (TargetBody.sphereOfInfluence - 100000));
@@ -93,7 +93,7 @@ namespace Hyperdrive
             }
             else
             {
-                Debug.LogError(Utils.Log("Hyperdrive.WarpDriver.MedTechWarp has encountered an 'anomaly'. Jump canceled."));
+                Debug.LogError(Utils.Log("BMSHyperdrive.WarpDriver.MedTechWarp has encountered an 'anomaly'. Jump canceled."));
                 print("How on Kerbin did you even call this if there is no active vessel?");
                 return;
             }
