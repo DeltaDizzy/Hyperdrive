@@ -41,11 +41,6 @@ namespace Hyperdrive
             TechLevel tLev = new TechLevel();
             foreach (CelestialBody body in bodylist)
             {
-                if ()
-                {
-
-                }
-
                 dialogBase.Add(new DialogGUIButton(body.displayName ?? body.name, //LowTechWarp Button
                     delegate
                     {

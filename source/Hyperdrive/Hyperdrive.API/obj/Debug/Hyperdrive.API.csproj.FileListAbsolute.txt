@@ -9,3 +9,7 @@ C:\Users\caleb\Desktop\source\repos\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdri
 C:\Users\ejbraswell\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.csprojResolveAssemblyReference.cache
 C:\Users\ejbraswell\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.dll
 C:\Users\ejbraswell\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.pdb
+C:\Users\DeltaDizzy\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.csprojResolveAssemblyReference.cache
+C:\Users\DeltaDizzy\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.csproj.CoreCompileInputs.cache
+C:\Users\DeltaDizzy\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.dll
+C:\Users\DeltaDizzy\Documents\GitHub\Hyperdrive\source\Hyperdrive\Hyperdrive.API\obj\Debug\Hyperdrive.API.pdb
